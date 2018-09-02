@@ -3,6 +3,9 @@ package Miservlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Collection;
+import javax.faces.application.FacesMessage;
+import javax.faces.validator.ValidatorException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -15,8 +18,16 @@ public class obtener extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+            
+            
             String nom=request.getParameter("usuario");
             String correo=request.getParameter("correo");
+//       if(nom.equals("")){
+//            message m = new message();
+//            m.setDetail("Al Menos Llene Una de Estas Opciones");
+//           
+//            throw new ValidatorException((Collection<FacesMessage>) m);
+//       }else{}
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
